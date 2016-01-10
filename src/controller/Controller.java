@@ -1,11 +1,14 @@
 package controller;
 
+import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
+import javafx.stage.FileChooser;
+import weka.ProbabilityCounter;
 
 public class Controller {
 
@@ -48,19 +51,24 @@ public class Controller {
 	private Button buttonCount;
         
         @FXML
-        private PopupController popupController;
-	
+        private Button buttonNewData;
+        
         private List<Slider> sliders;
+        
+        File selectedFile = null;
+        ProbabilityCounter counter;
         
 	public Controller() {
 		
-	}
+        }
 	
 	/**
 	 * Metoda wywo�ywana przy starcie programu. Ustawia warto�ci pocz�tkowe.
 	 */
+        @FXML
 	private void initialize() {
 		initializeSlideBars();
+                counter = new ProbabilityCounter();
 	}
 
 	private void initializeSlideBars() {
@@ -170,7 +178,24 @@ public class Controller {
                 for (int i = 0; i < attributesValues.length; i++)
                     attributesValues[i] = sliders.get(i).getValue();
                 
-		popupController.counter.CalculateProbability(attributesValues);
+                counter.BuildClassifier();
+                double calculatedProbability = counter.CalculateProbability(attributesValues);
+                ShowEvaluation();              
 	}
+        
+        @FXML
+        private void buttonNewDataClicked (ActionEvent event){
+            FileChooser fileChooser = new FileChooser();
+		fileChooser.setTitle("Wybierz plik z danymi");
+		fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("ARFF", "*.arff*"));
+		selectedFile = fileChooser.showOpenDialog(buttonNewData.getScene().getWindow());
+                counter = new ProbabilityCounter(selectedFile);
+        }
+        
+    private void ShowEvaluation() {
+        
+    }
+        
+        
 	
 }

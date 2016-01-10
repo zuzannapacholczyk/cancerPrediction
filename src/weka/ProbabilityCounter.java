@@ -5,12 +5,15 @@ import weka.classifiers.trees.J48;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
+import weka.gui.treevisualizer.PlaceNode2;
+import weka.gui.treevisualizer.TreeVisualizer;
 
 public class ProbabilityCounter {
 
 	private File dataFile;
         private DataSource dataSource;
 	private J48 classifier;
+        private Instances data;
         
 	public ProbabilityCounter(File selectedFile) {
 		dataFile = selectedFile;
@@ -33,7 +36,7 @@ public class ProbabilityCounter {
         
         public void BuildClassifier() throws Exception{
             dataSource = new DataSource(dataFile.getPath());
-            Instances data = dataSource.getDataSet();
+            data = dataSource.getDataSet();
             
             if(data.classIndex() == -1)
                 data.setClassIndex(data.numAttributes() - 1);         
@@ -45,13 +48,22 @@ public class ProbabilityCounter {
         
         public double CalculateProbability (double [] attributes) throws Exception{
             Instance instance = new Instance(attributes.length+1);
+            instance.setDataset (data);
             for (int i = 0; i < attributes.length; i++){
                 instance.setValue(i, attributes[i]);
             }
-            instance.setClassMissing();
+            System.out.println (instance);
 
             double[] probability;
             probability = classifier.distributionForInstance(instance);
+            System.out.println("Rak złośliwy z prawdopodobieństwem: "+probability[1]);
             return probability[1];
+        }
+        
+        public void DisplayClassifier() throws Exception{
+
+            TreeVisualizer treeVis = new TreeVisualizer(null, classifier.graph(), 
+                    new PlaceNode2());
+            
         }
 }

@@ -17,17 +17,17 @@ public class Main extends Application {
 			primaryStage.setScene(scene);
 			primaryStage.setTitle("Analiza zagrozenia rakiem piersi");
 
-			// popup do wyboru pliku
-			Parent popup = FXMLLoader.load(getClass().getResource("popup.fxml"));
-			Scene popupScene = new Scene(popup);
-			popupScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
-			Stage popupStage = new Stage();
-			popupStage.setScene(popupScene);
-			popupStage.initModality(Modality.APPLICATION_MODAL);
-			popupStage.setTitle("Wybierz plik z danymi");
+//			// popup do wyboru pliku
+//			Parent popup = FXMLLoader.load(getClass().getResource("popup.fxml"));
+//			Scene popupScene = new Scene(popup);
+//			popupScene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+//			Stage popupStage = new Stage();
+//			popupStage.setScene(popupScene);
+//			popupStage.initModality(Modality.APPLICATION_MODAL);
+//			popupStage.setTitle("Wybierz plik z danymi");
 			
 			primaryStage.show();
-			popupStage.showAndWait();
+//			popupStage.showAndWait();
 
 		} catch (Exception e) {
 			e.printStackTrace();
