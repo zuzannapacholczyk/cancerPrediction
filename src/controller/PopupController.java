@@ -24,7 +24,7 @@ public class PopupController {
 	private Button okButton;
 	
 	File selectedFile = null;
-	
+        ProbabilityCounter counter;
 	@FXML
 	private void initialize() {
 		textField.setEditable(false);
@@ -32,19 +32,21 @@ public class PopupController {
 
 	@FXML
 	private void cancelButtonClicked(ActionEvent event) {
-		ProbabilityCounter counter = new ProbabilityCounter();
+		counter = new ProbabilityCounter();
 		cancelButton.getScene().getWindow().hide();
 	}
 
 	@FXML
 	private void okButtonClicked(ActionEvent event) {
 		if(selectedFile != null) {
-			ProbabilityCounter counter = new ProbabilityCounter(selectedFile);
+			counter = new ProbabilityCounter(selectedFile);
 		}
 		else {
-			ProbabilityCounter counter = new ProbabilityCounter();
+			counter = new ProbabilityCounter();
 		}
+                
 		okButton.getScene().getWindow().hide();
+                
 	}
 
 	@FXML
@@ -52,7 +54,7 @@ public class PopupController {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Wybierz plik z danymi");
 		fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("ARFF", "*.arff*"));
-		File selectedFile = fileChooser.showOpenDialog(findButton.getScene().getWindow());
+		selectedFile = fileChooser.showOpenDialog(findButton.getScene().getWindow());
 		textField.setText(selectedFile.getAbsolutePath());
 	}
 }

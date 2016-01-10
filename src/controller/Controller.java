@@ -1,5 +1,7 @@
 package controller;
 
+import java.util.LinkedList;
+import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,9 +10,9 @@ import javafx.scene.control.Slider;
 public class Controller {
 
 	/**
-	 * Ka¿dy element gui, do którego chcemy siê odwo³aæ musi mieæ okreœlone
-	 * fx:id w pliku fxml i musi byæ ono takie samo jak nazwa zmiennej tutaj z
-	 * adnotacj¹ @FXML
+	 * Kaï¿½dy element gui, do ktï¿½rego chcemy siï¿½ odwoï¿½aï¿½ musi mieï¿½ okreï¿½lone
+	 * fx:id w pliku fxml i musi byï¿½ ono takie samo jak nazwa zmiennej tutaj z
+	 * adnotacjï¿½ @FXML
 	 */
 	@FXML
 	private Slider slider1;
@@ -44,22 +46,28 @@ public class Controller {
 	
 	@FXML
 	private Button buttonCount;
+        
+        @FXML
+        private PopupController popupController;
 	
+        private List<Slider> sliders;
+        
 	public Controller() {
 		
 	}
 	
 	/**
-	 * Metoda wywo³ywana przy starcie programu. Ustawia wartoœci pocz¹tkowe.
+	 * Metoda wywoï¿½ywana przy starcie programu. Ustawia wartoï¿½ci poczï¿½tkowe.
 	 */
-	@FXML
 	private void initialize() {
 		initializeSlideBars();
 	}
 
 	private void initializeSlideBars() {
 		
-		// Ustawienie skali 1-10 dla slidera. Dla ka¿dego trzeba zrobiæ to samo
+                sliders = new LinkedList<>();
+                sliders.add(slider1);
+		// Ustawienie skali 1-10 dla slidera. Dla kaï¿½dego trzeba zrobiï¿½ to samo
 		slider1.setMin(1);
 		slider1.setMax(10);
 		slider1.setShowTickLabels(true);
@@ -68,6 +76,7 @@ public class Controller {
 		slider1.setMinorTickCount(0);
 		slider1.setSnapToTicks(true);
 		
+                sliders.add(slider2);
 		slider2.setMin(1);
 		slider2.setMax(10);
 		slider2.setShowTickLabels(true);
@@ -76,6 +85,7 @@ public class Controller {
 		slider2.setMinorTickCount(0);
 		slider2.setSnapToTicks(true);
 		
+                sliders.add(slider3);
 		slider3.setMin(1);
 		slider3.setMax(10);
 		slider3.setShowTickLabels(true);
@@ -84,6 +94,7 @@ public class Controller {
 		slider3.setMinorTickCount(0);
 		slider3.setSnapToTicks(true);
 		
+                sliders.add(slider4);
 		slider4.setMin(1);
 		slider4.setMax(10);
 		slider4.setShowTickLabels(true);
@@ -92,6 +103,7 @@ public class Controller {
 		slider4.setMinorTickCount(0);
 		slider4.setSnapToTicks(true);
 		
+                sliders.add(slider5);
 		slider5.setMin(1);
 		slider5.setMax(10);
 		slider5.setShowTickLabels(true);
@@ -100,6 +112,7 @@ public class Controller {
 		slider5.setMinorTickCount(0);
 		slider5.setSnapToTicks(true);
 		
+                sliders.add(slider6);
 		slider6.setMin(1);
 		slider6.setMax(10);
 		slider6.setShowTickLabels(true);
@@ -108,6 +121,7 @@ public class Controller {
 		slider6.setMinorTickCount(0);
 		slider6.setSnapToTicks(true);
 		
+                sliders.add(slider7);
 		slider7.setMin(1);
 		slider7.setMax(10);
 		slider7.setShowTickLabels(true);
@@ -116,6 +130,7 @@ public class Controller {
 		slider7.setMinorTickCount(0);
 		slider7.setSnapToTicks(true);
 		
+                sliders.add(slider8);
 		slider8.setMin(1);
 		slider8.setMax(10);
 		slider8.setShowTickLabels(true);
@@ -124,6 +139,7 @@ public class Controller {
 		slider8.setMinorTickCount(0);
 		slider8.setSnapToTicks(true);
 		
+                sliders.add(slider9);
 		slider9.setMin(1);
 		slider9.setMax(10);
 		slider9.setShowTickLabels(true);
@@ -134,13 +150,13 @@ public class Controller {
 	}
 	
 	/**
-	 * Metoda o tej samej nazwie, co w onAction w pliku fxml. Ta dotyczy przycisku "Wyczyœæ"
+	 * Metoda o tej samej nazwie, co w onAction w pliku fxml. Ta dotyczy przycisku "Wyczyï¿½ï¿½"
 	 * @param event
 	 */
 	@FXML
 	private void buttonCleanClicked(ActionEvent event) {
-		// TODO
-		
+            for (Slider s : sliders)
+                s.setValue(1);
 	}
 	
 	/**
@@ -148,8 +164,13 @@ public class Controller {
 	 * @param event
 	 */
 	@FXML
-	private void buttonCountClicked(ActionEvent event) {
-		// TODO
+	private void buttonCountClicked(ActionEvent event) throws Exception {
+                double [] attributesValues = new double[sliders.size()];
+                
+                for (int i = 0; i < attributesValues.length; i++)
+                    attributesValues[i] = sliders.get(i).getValue();
+                
+		popupController.counter.CalculateProbability(attributesValues);
 	}
 	
 }
