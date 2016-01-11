@@ -32,17 +32,17 @@ public class PopupController {
 
 	@FXML
 	private void cancelButtonClicked(ActionEvent event) {
-		counter = new ProbabilityCounter();
+		counter = ProbabilityCounter.getInstance(selectedFile);
 		cancelButton.getScene().getWindow().hide();
 	}
 
 	@FXML
 	private void okButtonClicked(ActionEvent event) {
 		if(selectedFile != null) {
-			counter = new ProbabilityCounter(selectedFile);
+                        counter = ProbabilityCounter.getInstance(selectedFile);
 		}
 		else {
-			counter = new ProbabilityCounter();
+			counter = ProbabilityCounter.getInstance(selectedFile);
 		}
                 
 		okButton.getScene().getWindow().hide();

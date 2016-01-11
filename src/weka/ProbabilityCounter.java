@@ -14,15 +14,28 @@ public class ProbabilityCounter {
         private DataSource dataSource;
 	private J48 classifier;
         private Instances data;
+        private static ProbabilityCounter counterInstance;
         
-	public ProbabilityCounter(File selectedFile) {
+	private ProbabilityCounter(File selectedFile) {
 		dataFile = selectedFile;
 	}
 
-	public ProbabilityCounter() {
+	private ProbabilityCounter() {
 		readDefaultDataFile();
 	}
-
+        
+        public static ProbabilityCounter getInstance(File file){
+            if (counterInstance == null){
+                if (file == null){
+                    counterInstance = new ProbabilityCounter();
+                }
+                else{
+                    counterInstance = new ProbabilityCounter(file);
+                }
+            }
+        return counterInstance;
+        }
+        
 	private void readDefaultDataFile() {
             try
             {

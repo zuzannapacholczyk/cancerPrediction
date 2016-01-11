@@ -68,7 +68,7 @@ public class Controller {
         @FXML
 	private void initialize() {
 		initializeSlideBars();
-                counter = new ProbabilityCounter();
+                counter = ProbabilityCounter.getInstance(selectedFile);
 	}
 
 	private void initializeSlideBars() {
@@ -181,15 +181,6 @@ public class Controller {
                 counter.BuildClassifier();
                 double calculatedProbability = counter.CalculateProbability(attributesValues);
                 ShowEvaluation();              
-	}
-        
-        @FXML
-        private void buttonNewDataClicked (ActionEvent event){
-            FileChooser fileChooser = new FileChooser();
-		fileChooser.setTitle("Wybierz plik z danymi");
-		fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("ARFF", "*.arff*"));
-		selectedFile = fileChooser.showOpenDialog(buttonNewData.getScene().getWindow());
-                counter = new ProbabilityCounter(selectedFile);
         }
         
     private void ShowEvaluation() {
