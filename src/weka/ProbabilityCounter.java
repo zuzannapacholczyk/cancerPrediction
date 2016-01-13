@@ -66,7 +66,7 @@ public class ProbabilityCounter {
                 instance.setValue(i, attributes[i]);
             }
             System.out.println (instance);
-
+            
             double[] probability;
             probability = classifier.distributionForInstance(instance);
             System.out.println("Rak złośliwy z prawdopodobieństwem: "+probability[1]);

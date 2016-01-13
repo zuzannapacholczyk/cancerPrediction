@@ -6,8 +6,8 @@ import java.util.List;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
-import javafx.stage.FileChooser;
 import weka.ProbabilityCounter;
 
 public class Controller {
@@ -43,6 +43,33 @@ public class Controller {
 	
 	@FXML
 	private Slider slider9;
+        
+        @FXML
+	private Label label1;
+	
+	@FXML
+	private Label label2;
+	
+	@FXML
+	private Label label3;
+	
+	@FXML
+	private Label label4;
+	
+	@FXML
+	private Label label5;
+	
+	@FXML
+	private Label label6;
+	
+	@FXML
+	private Label label7;
+	
+	@FXML
+	private Label label8;
+	
+	@FXML
+	private Label label9;
 	
 	@FXML
 	private Button buttonClean;
@@ -50,8 +77,6 @@ public class Controller {
 	@FXML
 	private Button buttonCount;
         
-        @FXML
-        private Button buttonNewData;
         
         private List<Slider> sliders;
         
@@ -180,11 +205,22 @@ public class Controller {
                 
                 counter.BuildClassifier();
                 double calculatedProbability = counter.CalculateProbability(attributesValues);
-                ShowEvaluation();              
+                ShowEvaluation(calculatedProbability);              
         }
         
-    private void ShowEvaluation() {
-        
+    private void ShowEvaluation(double probability) {
+                label1.setText(Double.toString(slider1.getValue()));
+                label2.setText(Double.toString(slider2.getValue()));
+                label3.setText(Double.toString(slider3.getValue()));
+                label4.setText(Double.toString(slider4.getValue()));
+                label5.setText(Double.toString(slider5.getValue()));
+                label6.setText(Double.toString(slider6.getValue()));
+                label7.setText(Double.toString(slider7.getValue()));
+                label8.setText(Double.toString(slider8.getValue()));
+                label9.setText(Double.toString(slider9.getValue()));
+                
+                               
+                
     }
         
         
