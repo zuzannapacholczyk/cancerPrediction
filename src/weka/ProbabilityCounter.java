@@ -1,6 +1,7 @@
 package weka;
 
 import java.io.File;
+import javafx.scene.Node;
 import weka.classifiers.trees.J48;
 import weka.core.Instance;
 import weka.core.Instances;
@@ -73,10 +74,4 @@ public class ProbabilityCounter {
             return probability[1];
         }
         
-        public void DisplayClassifier() throws Exception{
-
-            TreeVisualizer treeVis = new TreeVisualizer(null, classifier.graph(), 
-                    new PlaceNode2());
-            
-        }
 }

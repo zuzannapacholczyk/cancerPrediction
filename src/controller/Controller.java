@@ -3,12 +3,17 @@ package controller;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
+import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
+import javafx.scene.layout.BorderPane;
+import javax.swing.JFrame;
+import javax.swing.JPanel;
 import weka.ProbabilityCounter;
+import weka.core.Utils;
 
 public class Controller {
 
@@ -77,6 +82,11 @@ public class Controller {
 	@FXML
 	private Button buttonCount;
         
+        @FXML
+        private Label labelProb;
+        
+        @FXML
+        private Label labelDiagnosis;
         
         private List<Slider> sliders;
         
@@ -208,7 +218,14 @@ public class Controller {
                 ShowEvaluation(calculatedProbability);              
         }
         
-    private void ShowEvaluation(double probability) {
+    private void ShowEvaluation(double probability) throws Exception {
+                SetResultLabels();
+                labelProb.setText(Utils.doubleToString(probability*100, 2)+"%");
+                SetDiagnosisLabel(probability);
+                VisualizeTree(); 
+    }
+
+    private void SetResultLabels() {
                 label1.setText(Double.toString(slider1.getValue()));
                 label2.setText(Double.toString(slider2.getValue()));
                 label3.setText(Double.toString(slider3.getValue()));
@@ -218,11 +235,20 @@ public class Controller {
                 label7.setText(Double.toString(slider7.getValue()));
                 label8.setText(Double.toString(slider8.getValue()));
                 label9.setText(Double.toString(slider9.getValue()));
-                
-                               
+    }
+
+    private void SetDiagnosisLabel(double probability) {
+                String diagnosis="";
+                if(probability<0.1)
+                    diagnosis="Wszystko ok";
+                else if (probability<0.5)
+                    diagnosis="Średnio";
+                else
+                    diagnosis="Tragedia";    
+                labelDiagnosis.setText(diagnosis);
+    }   
+
+    private void VisualizeTree() {
                 
     }
-        
-        
-	
 }
