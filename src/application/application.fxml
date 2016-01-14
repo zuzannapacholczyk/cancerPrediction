@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<<<<<<< HEAD
 <?import javafx.embed.swing.*?>
+=======
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 <?import javafx.scene.effect.*?>
 <?import javafx.geometry.*?>
 <?import javafx.scene.text.*?>
@@ -195,6 +198,7 @@
           </Tab>
           <Tab text="Analiza">
             <content>
+<<<<<<< HEAD
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
                         <GridPane layoutX="12.0" prefHeight="611.0" prefWidth="711.0">
@@ -277,6 +281,11 @@
             </content>
           </Tab>
             <Tab text="Drzewo" />
+=======
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+            </content>
+          </Tab>
+>>>>>>> refs/remotes/zuzannapacholczyk/master
         </tabs>
          <opaqueInsets>
             <Insets />

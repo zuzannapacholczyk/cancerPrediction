@@ -1,6 +1,7 @@
 package weka;
 
 import java.io.File;
+<<<<<<< HEAD
 import javafx.scene.Node;
 import weka.classifiers.trees.J48;
 import weka.core.Instance;
@@ -8,10 +9,13 @@ import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
 import weka.gui.treevisualizer.PlaceNode2;
 import weka.gui.treevisualizer.TreeVisualizer;
+=======
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 
 public class ProbabilityCounter {
 
 	private File dataFile;
+<<<<<<< HEAD
         private DataSource dataSource;
 	private J48 classifier;
         private Instances data;
@@ -74,4 +78,20 @@ public class ProbabilityCounter {
             return probability[1];
         }
         
+=======
+	
+	public ProbabilityCounter(File selectedFile) {
+		dataFile = selectedFile;
+	}
+
+	public ProbabilityCounter() {
+		readDefaultDataFile();
+	}
+
+	private void readDefaultDataFile() {
+		// TODO Auto-generated method stub
+		
+	}
+
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 }

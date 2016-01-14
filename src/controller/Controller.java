@@ -1,5 +1,6 @@
 package controller;
 
+<<<<<<< HEAD
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
@@ -14,13 +15,25 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import weka.ProbabilityCounter;
 import weka.core.Utils;
+=======
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
+import javafx.scene.control.Button;
+import javafx.scene.control.Slider;
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 
 public class Controller {
 
 	/**
+<<<<<<< HEAD
 	 * Kaï¿½dy element gui, do ktï¿½rego chcemy siï¿½ odwoï¿½aï¿½ musi mieï¿½ okreï¿½lone
 	 * fx:id w pliku fxml i musi byï¿½ ono takie samo jak nazwa zmiennej tutaj z
 	 * adnotacjï¿½ @FXML
+=======
+	 * Ka¿dy element gui, do którego chcemy siê odwo³aæ musi mieæ okreœlone
+	 * fx:id w pliku fxml i musi byæ ono takie samo jak nazwa zmiennej tutaj z
+	 * adnotacj¹ @FXML
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 	 */
 	@FXML
 	private Slider slider1;
@@ -48,6 +61,7 @@ public class Controller {
 	
 	@FXML
 	private Slider slider9;
+<<<<<<< HEAD
         
         @FXML
 	private Label label1;
@@ -75,12 +89,15 @@ public class Controller {
 	
 	@FXML
 	private Label label9;
+=======
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 	
 	@FXML
 	private Button buttonClean;
 	
 	@FXML
 	private Button buttonCount;
+<<<<<<< HEAD
         
         @FXML
         private Label labelProb;
@@ -104,13 +121,30 @@ public class Controller {
 	private void initialize() {
 		initializeSlideBars();
                 counter = ProbabilityCounter.getInstance(selectedFile);
+=======
+	
+	public Controller() {
+		
+	}
+	
+	/**
+	 * Metoda wywo³ywana przy starcie programu. Ustawia wartoœci pocz¹tkowe.
+	 */
+	@FXML
+	private void initialize() {
+		initializeSlideBars();
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 	}
 
 	private void initializeSlideBars() {
 		
+<<<<<<< HEAD
                 sliders = new LinkedList<>();
                 sliders.add(slider1);
 		// Ustawienie skali 1-10 dla slidera. Dla kaï¿½dego trzeba zrobiï¿½ to samo
+=======
+		// Ustawienie skali 1-10 dla slidera. Dla ka¿dego trzeba zrobiæ to samo
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 		slider1.setMin(1);
 		slider1.setMax(10);
 		slider1.setShowTickLabels(true);
@@ -119,7 +153,10 @@ public class Controller {
 		slider1.setMinorTickCount(0);
 		slider1.setSnapToTicks(true);
 		
+<<<<<<< HEAD
                 sliders.add(slider2);
+=======
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 		slider2.setMin(1);
 		slider2.setMax(10);
 		slider2.setShowTickLabels(true);
@@ -128,7 +165,10 @@ public class Controller {
 		slider2.setMinorTickCount(0);
 		slider2.setSnapToTicks(true);
 		
+<<<<<<< HEAD
                 sliders.add(slider3);
+=======
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 		slider3.setMin(1);
 		slider3.setMax(10);
 		slider3.setShowTickLabels(true);
@@ -137,7 +177,10 @@ public class Controller {
 		slider3.setMinorTickCount(0);
 		slider3.setSnapToTicks(true);
 		
+<<<<<<< HEAD
                 sliders.add(slider4);
+=======
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 		slider4.setMin(1);
 		slider4.setMax(10);
 		slider4.setShowTickLabels(true);
@@ -146,7 +189,10 @@ public class Controller {
 		slider4.setMinorTickCount(0);
 		slider4.setSnapToTicks(true);
 		
+<<<<<<< HEAD
                 sliders.add(slider5);
+=======
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 		slider5.setMin(1);
 		slider5.setMax(10);
 		slider5.setShowTickLabels(true);
@@ -155,7 +201,10 @@ public class Controller {
 		slider5.setMinorTickCount(0);
 		slider5.setSnapToTicks(true);
 		
+<<<<<<< HEAD
                 sliders.add(slider6);
+=======
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 		slider6.setMin(1);
 		slider6.setMax(10);
 		slider6.setShowTickLabels(true);
@@ -164,7 +213,10 @@ public class Controller {
 		slider6.setMinorTickCount(0);
 		slider6.setSnapToTicks(true);
 		
+<<<<<<< HEAD
                 sliders.add(slider7);
+=======
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 		slider7.setMin(1);
 		slider7.setMax(10);
 		slider7.setShowTickLabels(true);
@@ -173,7 +225,10 @@ public class Controller {
 		slider7.setMinorTickCount(0);
 		slider7.setSnapToTicks(true);
 		
+<<<<<<< HEAD
                 sliders.add(slider8);
+=======
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 		slider8.setMin(1);
 		slider8.setMax(10);
 		slider8.setShowTickLabels(true);
@@ -182,7 +237,10 @@ public class Controller {
 		slider8.setMinorTickCount(0);
 		slider8.setSnapToTicks(true);
 		
+<<<<<<< HEAD
                 sliders.add(slider9);
+=======
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 		slider9.setMin(1);
 		slider9.setMax(10);
 		slider9.setShowTickLabels(true);
@@ -193,13 +251,22 @@ public class Controller {
 	}
 	
 	/**
+<<<<<<< HEAD
 	 * Metoda o tej samej nazwie, co w onAction w pliku fxml. Ta dotyczy przycisku "Wyczyï¿½ï¿½"
+=======
+	 * Metoda o tej samej nazwie, co w onAction w pliku fxml. Ta dotyczy przycisku "Wyczyœæ"
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 	 * @param event
 	 */
 	@FXML
 	private void buttonCleanClicked(ActionEvent event) {
+<<<<<<< HEAD
             for (Slider s : sliders)
                 s.setValue(1);
+=======
+		// TODO
+		
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 	}
 	
 	/**
@@ -207,6 +274,7 @@ public class Controller {
 	 * @param event
 	 */
 	@FXML
+<<<<<<< HEAD
 	private void buttonCountClicked(ActionEvent event) throws Exception {
                 double [] attributesValues = new double[sliders.size()];
                 
@@ -251,4 +319,10 @@ public class Controller {
     private void VisualizeTree() {
                 
     }
+=======
+	private void buttonCountClicked(ActionEvent event) {
+		// TODO
+	}
+	
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 }
