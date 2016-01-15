@@ -1,8 +1,15 @@
 package controller;
 
+import java.awt.BorderLayout;
+import java.awt.event.ComponentEvent;
+import java.awt.event.ComponentListener;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
+
+import javax.swing.plaf.ComponentInputMapUIResource;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -13,9 +20,10 @@ import javafx.scene.control.Tab;
 import javafx.scene.control.TabPane;
 import weka.ProbabilityCounter;
 import weka.core.Utils;
+import weka.gui.treevisualizer.TreeVisualizer;
 
 public class Controller {
-	
+
 	@FXML
 	private TabPane tabPane;
 
@@ -80,6 +88,9 @@ public class Controller {
 	private Button buttonCount;
 
 	@FXML
+	private Button treeButton;
+
+	@FXML
 	private Label labelProb;
 
 	@FXML
@@ -89,6 +100,8 @@ public class Controller {
 
 	File selectedFile = null;
 	ProbabilityCounter counter;
+	final javax.swing.JFrame jf = new javax.swing.JFrame(
+			"Wizualizacja drzewa podejmowania decyzji dla klasyfikatora J48");
 
 	public Controller() {
 
@@ -220,13 +233,18 @@ public class Controller {
 		showEvaluation(calculatedProbability);
 	}
 
+	@FXML
+	private void displayTree(ActionEvent event) throws Exception {
+		jf.setVisible(true);
+	}
+
 	private void showEvaluation(double probability) throws Exception {
 		setResultLabels();
 		labelProb.setText(Utils.doubleToString(probability * 100, 2) + "%");
 		setDiagnosisLabel(probability);
-		visualizeTree();
+		visualizeTree(counter.displayClassifier());
 		SingleSelectionModel<Tab> selectionModel = tabPane.getSelectionModel();
-		selectionModel.select(1);	
+		selectionModel.select(1);
 	}
 
 	private void setResultLabels() {
@@ -252,7 +270,45 @@ public class Controller {
 		labelDiagnosis.setText(diagnosis);
 	}
 
-	private void visualizeTree() {
+	private void visualizeTree(TreeVisualizer tv) {
 
+		try {
+			jf.setSize(600, 500);
+			jf.getContentPane().setLayout(new BorderLayout());
+			jf.getContentPane().add(tv, BorderLayout.CENTER);
+			jf.addWindowListener(new java.awt.event.WindowAdapter() {
+				public void windowClosing(java.awt.event.WindowEvent e) {
+					jf.dispose();
+				}
+			});
+			jf.addComponentListener(new ComponentListener() {
+
+				@Override
+				public void componentResized(ComponentEvent e) {
+					fitTreeToScreen(tv);
+				}
+
+				@Override
+				public void componentHidden(ComponentEvent e) {
+				}
+
+				@Override
+				public void componentMoved(ComponentEvent e) {
+				}
+
+				@Override
+				public void componentShown(ComponentEvent e) {
+				}
+			});
+			jf.setResizable(true);
+			fitTreeToScreen(tv);
+		} catch (Exception e1) {
+			e1.printStackTrace();
+		}
+	}
+
+	private void fitTreeToScreen(TreeVisualizer tv) {
+		tv.fitToScreen();
+		tv.setAutoscrolls(true);
 	}
 }

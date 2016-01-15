@@ -279,6 +279,7 @@
 														<Font name="System Bold" size="18.0" />
 													</font>
 												</Label>
+                                    <Button fx:id="treeButton" mnemonicParsing="false" onAction="#displayTree" prefHeight="44.0" prefWidth="174.0" text="Pokaż drzewo" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="TOP" />
 											</children>
 										</GridPane>
 									</children>
@@ -287,7 +288,6 @@
 						</AnchorPane>
 					</content>
 				</Tab>
-				<Tab text="Drzewo" />
 			</tabs>
 			<opaqueInsets>
 				<Insets />

@@ -1,10 +1,13 @@
 package weka;
 
+import java.awt.Color;
 import java.io.File;
 import weka.classifiers.trees.J48;
 import weka.core.Instance;
 import weka.core.Instances;
 import weka.core.converters.ConverterUtils.DataSource;
+import weka.gui.treevisualizer.PlaceNode2;
+import weka.gui.treevisualizer.TreeVisualizer;
 
 public class ProbabilityCounter {
 
@@ -65,5 +68,12 @@ public class ProbabilityCounter {
 		probability = classifier.distributionForInstance(instance);
 		System.out.println("Rak zlosliwy z prawdopodobienstwem: " + probability[1]);
 		return probability[1];
+	}
+
+	public TreeVisualizer displayClassifier() throws Exception {
+
+		TreeVisualizer treeVis = new TreeVisualizer(null, classifier.graph(), new PlaceNode2());
+		return treeVis;
+
 	}
 }
