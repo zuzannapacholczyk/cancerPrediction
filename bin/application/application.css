@@ -10,6 +10,10 @@
 	-fx-background-color: -ps-base-color;
 }
 
+#labelDiagnosis {
+	-fx-text-fill: #c6448b;
+} 
+
 .label {
 	-fx-text-fill: -ps-text-color;
 }
@@ -17,3 +21,4 @@
 .button {
 	-fx-text-fill: -ps-text-color;
 }
+ 

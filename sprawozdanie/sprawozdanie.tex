@@ -1,0 +1,55 @@
+\documentclass{article}
+\usepackage{polski}
+\usepackage[utf8]{inputenc} 
+\usepackage[T1]{fontenc} 
+\usepackage{graphicx}
+\usepackage[hscale=0.7,vscale=0.8]{geometry}
+
+\title{System wspomagania diagnostyki medycznej
+\\ Systemy wspomagania decyzji- projekt}
+\author{Zuzanna Pacholczyk, 230709 \\ 
+		Dawid Robaczyński, 194860}
+
+\begin{document}
+
+\maketitle
+
+\section{Założenia wstępne}
+
+Celem projektu jest stworzenie aplikacji wspomagającej diagnostykę medyczną w zakresie wykrywania raka piersi. Aplikacja wykorzystuje dane dostarczone przez użytkownika lub wcześniej przygotowane (dane zaczerpnięte z UCI Marchine Learning Repository), dostarczane wraz z aplikacją w celu zbudowania klasyfikatora wykorzystywanego do określenia prawdopodobieństwa występowania raka piersi. Program pozwala użytkownikowi na samodzielne wprowadzenie wartości szeregu atrybutów i obliczenie na ich podstawie prawdopodobieństwa choroby. Wynik zostaje zaprezentowany jako wartość liczbowa wraz z drzewem decyzyjnym, które doprowadziło do uzyskania wyniku.
+
+\section{Technologia}
+
+Projekt został zaimplementowany w języku Java w wersji 8 przy wykorzystaniu framework'a JavaFX w celu utworzenia interfejsu graficznego oraz biblioteki Weka pozwalającej na wykorzystanie algorytmu eksploracji danych (ang. data mining).
+
+\section{Wykorzystane modele i algorytmy}
+
+Dla naszego problemu charakterystyczna jest niewielka liczba atrybutów: 9. Wszystkie z nich to atrybuty numeryczne przyjmujące wartości całkowitoliczbowe z zakresu 1-10, dlatego wybór odpowiedniego modelu chcieliśmy jak najlepiej dopasować do tej charakterystyki.
+
+Pierwszym z analizowanych modeli był Random Forest wykorzystujący kilka drzew decyzyjnych w celu zbudowania klasyfikatora. Opiera się o tzw. bagging (pakowanie do worków) w połączeniu z losowym wyborem ustawień. 
+
+Model ten został jednak przez nas odrzucony ze względu na zbyt skomplikowaną wizualizację, która nie byłaby użyteczna na niedoświadczonego użytkownika oraz zbyt skomplikowane ustawienia dla potrzeb naszego programu.
+
+Model, który wybraliśmy, to J48 wykorzystujący algorytm C4.5, który buduje pojedyncze drzewo decyzyjne. Doskonale sprawdza się w zastosowaniu dla atrybutów numerycznych, pozwala na estetyczną wizualizację powstałego drzewa i daje wiarygodne wyniki.
+
+\section{Działanie aplikacji}
+
+Użytkownik ma możliwość podania ścieżki do pliku z danymi, na podstawie których ma zostać zbudowany klasyfikator. Jeśli informacje te nie zostaną dostarczone, wykorzystane zostaną dane zaczerpnięte z UCI Marchine Learning Repository (\textit{https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+%28Original%29}) i wcześniej zbudowany klasyfikator.
+
+Następnie użytkownik ma możliwość wprowadzenia wartości atrybutów:
+\begin{itemize}
+\item grubość warstwy,
+\item rozmiar komórki równomierny,
+\item kształt komórki równomierny,
+\item marginalna przyczepność komórki,
+\item tozmiar tkanki nabłonkowej,
+\item jądra komórkowe,
+\item łagodna chromatyna,
+\item normalne jądra komórki,
+\item mitoza.
+\end{itemize}
+Atrybuty te przyjmują wartości od 1 do 10 i są one wybierane przy pomocy suwaków.
+
+Po wybraniu przycisku "Oblicz", następuje wyznaczenie prawdopodobieństwa występowania raka piersi, a informacje wynikowe zostają wyświetlone w postaci wartości procentowej i schematu drzewa decyzyjnego, które doprowadziło do tego wyniku.
+
+\end{document}

@@ -25,7 +25,7 @@ public class Main extends Application {
 			popupStage.setScene(popupScene);
 			popupStage.initModality(Modality.APPLICATION_MODAL);
 			popupStage.setTitle("Wybierz plik z danymi");
-			
+
 			primaryStage.show();
 			popupStage.showAndWait();
 
