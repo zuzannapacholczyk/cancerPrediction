@@ -1,7 +1,7 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.14)  14 JAN 2016 14:13
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.14)  15 JAN 2016 13:07
 entering extended mode
-**C:/Users/ZPACHOLC/Documents/cancerPrediction/sprawozdanie/sprawozdanie.tex
-(C:/Users/ZPACHOLC/Documents/cancerPrediction/sprawozdanie/sprawozdanie.tex
+**./sprawozdanie.tex
+(sprawozdanie.tex
 LaTeX2e <2015/10/01> patch level 2
 Babel <3.9m> and hyphenation patterns for 69 languages loaded.
 
@@ -396,8 +396,7 @@ Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
 \Gm@dimlist=\toks17
 
 ("C:\Users\ZPACHOLC\AppData\Local\Programs\MiKTeX 2.9\tex\latex\geometry\geomet
-ry.cfg"))
-No file sprawozdanie.aux.
+ry.cfg")) (sprawozdanie.aux)
 \openout1 = `sprawozdanie.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 13.
@@ -490,61 +489,40 @@ LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <8> on input line 15.
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <6> on input line 15.
+
+Overfull \hbox (82.59132pt too wide) in paragraph at lines 37--38
+\T1/cmr/m/n/10 czerp-ni¦-te z UCI Mar-chi-ne Le-ar-ning Re-po-si-to-ry (https:/
+/archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+ 
+ []
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 41.
+("C:\Users\ZPACHOLC\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
-Runaway argument?
-{https://archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+\par \ETC.
-! File ended while scanning use of \textit .
-<inserted text> 
-                \par 
-<*> ...cerPrediction/sprawozdanie/sprawozdanie.tex
-                                                  
-? 
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
+ [1
 
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*\end
-
-*
-Runaway argument?
-! Paragraph ended before \end was complete.
-<to be read again> 
-                   \par 
-<*> 
-    
-? 
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*
-(Please type a command or say `\end')
-*\end
-
-*
-Runaway argument?
-! Paragraph ended before \end was complete.
-<to be read again> 
-                   \par 
-<*> 
-    
-? 
-! Emergency stop.
-<to be read again> 
-                   \par 
-<*> 
-    
-End of file on the terminal!
-
- 
+{C:/Users/ZPACHOLC/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
+[2] (sprawozdanie.aux) ) 
 Here is how much of TeX's memory you used:
- 2262 strings out of 493634
- 30124 string characters out of 3134015
- 91533 words of memory out of 3000000
- 5635 multiletter control sequences out of 15000+200000
+ 2285 strings out of 493634
+ 30381 string characters out of 3134015
+ 92535 words of memory out of 3000000
+ 5650 multiletter control sequences out of 15000+200000
  11663 words of font info for 30 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 27i,6n,24p,752b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
-!  ==> Fatal error occurred, no output PDF file produced!
+ 27i,6n,24p,696b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\ZPACHOLC\AppData\Local\MiKTeX\2.9\fonts\pk\l
+jfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\ZPACHOLC\AppData\Local\MiKTeX\2
+.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\ZPACHOLC\AppData\L
+ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\ZPACH
+OLC\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk><C:
+/Users/ZPACHOLC/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
+m/cmsy10.pfb>
+Output written on sprawozdanie.pdf (2 pages, 65221 bytes).
+PDF statistics:
+ 178 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 1 words of extra memory for PDF output out of 10000 (max. 10000000)
+
