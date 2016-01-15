@@ -24,7 +24,11 @@ public class PopupController {
 	private Button okButton;
 	
 	File selectedFile = null;
+<<<<<<< HEAD
+        ProbabilityCounter counter;
+=======
 	
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 	@FXML
 	private void initialize() {
 		textField.setEditable(false);
@@ -32,19 +36,34 @@ public class PopupController {
 
 	@FXML
 	private void cancelButtonClicked(ActionEvent event) {
+<<<<<<< HEAD
+		counter = ProbabilityCounter.getInstance(selectedFile);
+=======
 		ProbabilityCounter counter = new ProbabilityCounter();
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 		cancelButton.getScene().getWindow().hide();
 	}
 
 	@FXML
 	private void okButtonClicked(ActionEvent event) {
 		if(selectedFile != null) {
+<<<<<<< HEAD
+                        counter = ProbabilityCounter.getInstance(selectedFile);
+		}
+		else {
+			counter = ProbabilityCounter.getInstance(selectedFile);
+		}
+                
+		okButton.getScene().getWindow().hide();
+                
+=======
 			ProbabilityCounter counter = new ProbabilityCounter(selectedFile);
 		}
 		else {
 			ProbabilityCounter counter = new ProbabilityCounter();
 		}
 		okButton.getScene().getWindow().hide();
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 	}
 
 	@FXML
@@ -52,7 +71,11 @@ public class PopupController {
 		FileChooser fileChooser = new FileChooser();
 		fileChooser.setTitle("Wybierz plik z danymi");
 		fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("ARFF", "*.arff*"));
+<<<<<<< HEAD
+		selectedFile = fileChooser.showOpenDialog(findButton.getScene().getWindow());
+=======
 		File selectedFile = fileChooser.showOpenDialog(findButton.getScene().getWindow());
+>>>>>>> refs/remotes/zuzannapacholczyk/master
 		textField.setText(selectedFile.getAbsolutePath());
 	}
 }
