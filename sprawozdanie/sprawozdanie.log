@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.14)  15 JAN 2016 13:07
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (MiKTeX 2.9) (preloaded format=pdflatex 2016.1.14)  19 JAN 2016 11:31
 entering extended mode
 **./sprawozdanie.tex
 (sprawozdanie.tex
@@ -489,40 +489,44 @@ LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <8> on input line 15.
 LaTeX Font Info:    External font `plex10' loaded for size
 (Font)              <6> on input line 15.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <10> on input line 37.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <7> on input line 37.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <5> on input line 37.
+ [1
 
-Overfull \hbox (82.59132pt too wide) in paragraph at lines 37--38
-\T1/cmr/m/n/10 czerp-ni¦-te z UCI Mar-chi-ne Le-ar-ning Re-po-si-to-ry (https:/
-/archive.ics.uci.edu/ml/datasets/Breast+Cancer+Wisconsin+ 
- []
-
+{C:/Users/ZPACHOLC/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
 LaTeX Font Info:    Try loading font information for OMS+cmr on input line 41.
+
 ("C:\Users\ZPACHOLC\AppData\Local\Programs\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 2014/09/29 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 41.
- [1
-
-{C:/Users/ZPACHOLC/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}]
-[2] (sprawozdanie.aux) ) 
+ [2] (sprawozdanie.aux) ) 
 Here is how much of TeX's memory you used:
- 2285 strings out of 493634
- 30381 string characters out of 3134015
- 92535 words of memory out of 3000000
- 5650 multiletter control sequences out of 15000+200000
- 11663 words of font info for 30 fonts, out of 3000000 for 9000
+ 2309 strings out of 493634
+ 30630 string characters out of 3134015
+ 91535 words of memory out of 3000000
+ 5664 multiletter control sequences out of 15000+200000
+ 16914 words of font info for 41 fonts, out of 3000000 for 9000
  1025 hyphenation exceptions out of 8191
- 27i,6n,24p,696b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
- <C:\Users\ZPACHOLC\AppData\Local\MiKTeX\2.9\fonts\pk\l
-jfour\jknappen\ec\dpi600\ecrm1000.pk> <C:\Users\ZPACHOLC\AppData\Local\MiKTeX\2
-.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecbx1440.pk> <C:\Users\ZPACHOLC\AppData\L
-ocal\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1200.pk> <C:\Users\ZPACH
-OLC\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1728.pk><C:
-/Users/ZPACHOLC/AppData/Local/Programs/MiKTeX 2.9/fonts/type1/public/amsfonts/c
-m/cmsy10.pfb>
-Output written on sprawozdanie.pdf (2 pages, 65221 bytes).
+ 27i,8n,24p,696b,201s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\ZPACHOLC\AppData\Local\MiKTeX\2.9\fonts\pk\
+ljfour\jknappen\ec\dpi600\ecrm0800.pk> <C:\Users\ZPACHOLC\AppData\Local\MiKTeX\
+2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0600.pk> <C:\Users\ZPACHOLC\AppData\
+Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm0700.pk> <C:\Users\ZPAC
+HOLC\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\ecrm1000.pk> <
+C:\Users\ZPACHOLC\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappen\ec\dpi600\e
+cbx1440.pk> <C:\Users\ZPACHOLC\AppData\Local\MiKTeX\2.9\fonts\pk\ljfour\jknappe
+n\ec\dpi600\ecrm1200.pk> <C:\Users\ZPACHOLC\AppData\Local\MiKTeX\2.9\fonts\pk\l
+jfour\jknappen\ec\dpi600\ecrm1728.pk><C:/Users/ZPACHOLC/AppData/Local/Programs/
+MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
+Output written on sprawozdanie.pdf (2 pages, 76787 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
+ 221 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
