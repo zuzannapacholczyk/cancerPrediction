@@ -3,13 +3,15 @@ package controller;
 import java.awt.BorderLayout;
 import java.awt.event.ComponentEvent;
 import java.awt.event.ComponentListener;
-import java.awt.event.WindowEvent;
 import java.io.File;
 import java.util.LinkedList;
 import java.util.List;
 
-import javax.swing.plaf.ComponentInputMapUIResource;
-
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.concurrent.Task;
+import javafx.concurrent.Worker;
+import javafx.concurrent.Worker.State;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -228,9 +230,31 @@ public class Controller {
 		for (int i = 0; i < attributesValues.length; i++)
 			attributesValues[i] = sliders.get(i).getValue();
 
-		counter.buildClassifier();
-		double calculatedProbability = counter.calculateProbability(attributesValues);
-		showEvaluation(calculatedProbability);
+		Task<Double> backgroundTask = new Task<Double>() {
+			@Override
+			protected Double call() throws Exception {
+				counter.buildClassifier();
+				return counter.calculateProbability(attributesValues);
+			}
+		};
+
+		backgroundTask.stateProperty().addListener(new ChangeListener<Worker.State>() {
+
+			@Override
+			public void changed(ObservableValue<? extends State> observable, State oldValue, State newValue) {
+				if (newValue == State.SUCCEEDED) {
+					try {
+						showEvaluation(backgroundTask.getValue());
+					} catch (Exception e) {
+						e.printStackTrace();
+					}
+				}
+
+			}
+		});
+		
+		new Thread(backgroundTask).start();
+
 	}
 
 	@FXML
